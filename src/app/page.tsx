@@ -19,6 +19,9 @@ import personIcon from "../assets/person-icon.svg";
 import messageIcon from "../assets/message-icon.svg";
 import StarCircleIcon from "../assets/star-circle.svg";
 import PSIcon from "../assets/adobe-photoshop-icon.png";
+import LinkedIcon from "../assets/linkedin-icon.svg";
+import WAIcon from "../assets/wa-icon.svg";
+import BehanceIcon from "../assets/behance-icon.svg";
 import FigmaIcon from "../assets/volumetric-figma-icon.png";
 import Image from "next/image";
 import { useState } from "react";
@@ -166,7 +169,7 @@ export default function Home() {
     }
   }
   return (
-    <div className="flex relative -z-50  flex-col items-center justify-between mx-auto max-w-[1440px] bg-[#0F0F0F] pt-[35px] md:px-[60px] px-[20px] space-y-[80px]  ">
+    <div className="flex relative -z-50  flex-col items-center justify-between mx-auto max-w-[1440px] bg-[#0F0F0F] pt-[35px]  md:px-0 px-[20px] space-y-[80px]  ">
       <div className="navbar flex justify-between flex-auto w-full  max-h-[50px]  mb-[45px] ">
         <h1 className=" text-[24px] font-medium ">Adesipe Tomide</h1>
         <ul className=" flex gap-[40px] items-center flex-row ">
@@ -182,7 +185,7 @@ export default function Home() {
         </ul>
       </div>
       <div className="homepage w-full flex flex-col gap-[92px] ">
-        <div className="hero-section relative w-full  rounded-[15px] bg-[url('../assets/bg-image.png')] bg-center bg-cover pt-[70px] pb-[70px] items-center flex flex-col ">
+        <div className="hero-section relative w-full  rounded-[15px] bg-opacity-10 bg-[url('../assets/bg-image.png')] bg-center bg-cover pt-[70px] pb-[70px] items-center flex flex-col ">
           <div className="flex flex-wrap gap-[10px] text-[22px] md:text-[50px] font-bold tracking-wide max-w-[80%] justify-center space-y-[1px] mb-[5px] ">
             <span>Hi</span>
             <Image
@@ -346,7 +349,7 @@ export default function Home() {
                   onChange={handleChange}
                   placeholder="Your name"
                   autoComplete="name"
-                  className="  w-full h-[50px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
+                  className="  w-full h-[60px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
                 />
               </div>
               <div className="flex relative flex-col gap-[10px] ">
@@ -364,7 +367,7 @@ export default function Home() {
                   onChange={handleChange}
                   placeholder="Your email address"
                   autoComplete="email"
-                  className=" w-full h-[50px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
+                  className=" w-full h-[60px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
                 />
               </div>
 
@@ -373,10 +376,10 @@ export default function Home() {
                   name="message"
                   id="message"
                   onChange={handleChange}
-                  cols={30}
-                  rows={10}
+                  cols={40}
+                  rows={20}
                   placeholder="Your message here"
-                  className=" w-full h-[150px] text-[18px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[10px] bg-[#93b9ff00]  "
+                  className=" w-full h-[250px] text-[18px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[10px] bg-[#93b9ff00]  "
                 ></textarea>
               </div>
               <input
@@ -384,21 +387,26 @@ export default function Home() {
                 typeof="submit"
                 value="Send me a message"
                 onSubmit={handleSubmit}
-                className=" cursor-pointer bg-[#7046DB] p-[14px] w-full rounded-[5px] "
+                className=" cursor-pointer bg-[#7046DB] text-[20px] py-[14px] px-[20px] w-fit rounded-[5px] "
               />
             </form>
             <Image src={contactImage} alt="contact person avatar" />
           </div>
         </div>
-        <div className="socials">
+        <div className="socials flex flex-col gap-[60px] ">
           <div className=" flex flex-col gap-[5px] items-center justify-center ">
             <h1 className=" text-[30px] font-medium ">Socials</h1>
             <Image src={curveUnderIcon} alt=" underline curve " />
           </div>
+          <div className=" flex gap-[40px] text-[30px] justify-center ">
+            <div className=" flex gap-[15px] items-center justify-center " ><Image className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center " src={LinkedIcon} alt=" linkedIn social media icon " /><a className=" underline " href="https://www.linkedin.com/in/adesipe-tomide/">John Tomide</a></div>
+            <div className=" flex gap-[15px] items-center justify-center "  ><Image className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center " src={WAIcon} alt="whatsapp social media icon" /><a className=" underline " href="https://wa.link/dbk5bf">+2348133905285</a></div>
+            <div className=" flex gap-[15px] items-center justify-center "  ><Image className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center "  src={BehanceIcon} alt=" behance social media icon" /><a className=" underline " href="https://wa.link/dbk5bf">John Tomide</a></div>
+          </div>
         </div>
       </div>
 
-      <footer></footer>
+      <footer className=" bg-[#FFFFFF1A] flex justify-center items-center py-[16px] w-screen text-[20px] " >Adesipe Tomide     2024</footer>
     </div>
   );
 }
