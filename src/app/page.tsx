@@ -26,6 +26,7 @@ import BehanceIcon from "../assets/behance-icon.svg";
 import FigmaIcon from "../assets/volumetric-figma-icon.png";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 const caseStudies = [
   {
@@ -94,7 +95,7 @@ const designShots = [
 export default function Home() {
   const [selectionState, setSelectionState] = useState(true);
   const [validationState, setValidatiionState] = useState(true);
-  const [hamburgerState, setHamburgerState] = useState(false);
+
   //   const [buttonStyle, setButtonStyle] = useState(false);
 
   const designSelection = () => {
@@ -105,16 +106,6 @@ export default function Home() {
     console.log("casebuttton");
     setSelectionState(true);
   };
-
-  // hamburger menu
-  const showMenu = () => {
-    setHamburgerState(true);
-  };
-  const closeMenu = () => {
-    setHamburgerState(false);
-  };
-
-  // form validation and the likes
 
   // FORM VALIDATION
   const [formData, setFormData] = useState({
@@ -178,324 +169,286 @@ export default function Home() {
       setValidatiionState(false);
     }
   }
+
   return (
-    <div className="flex relative flex-col items-center w-screen bg-[#0F0F0F] md:px-0 space-y-[80px]  ">
-      <nav className=" fixed top-0 left-0 z-10 bg-[#0f0f0fd2] backdrop-blur-lg pt-[25px] pb-[20px] flex justify-center flex-auto w-full max-h-fit 2xl: px-[24px] md:px-[40px] mb-[45px] ">
-        <div className=" flex items-center justify-between w-full max-w-[1440px] ">
-          <h1 className=" text-[24px] font-medium ">Adesipe Tomide</h1>
-          <ul className=" md:flex gap-[40px] items-center flex-row hidden  ">
-            <li className="flex">My works</li>
-            <li className="flex">About me</li>
-            <li>
-              <div className="flex border-solid fill-none p-[2px] bg-gradient-to-r from-[#F07175] to-[#6B58EF]  rounded-[6px] ">
-                <button className="flex px-[15px] py-[8px] bg-[#0F0F0F] rounded-[6px] ">
-                  Contact me
-                </button>
-              </div>
-            </li>
-          </ul>
-          {hamburgerState !== true ? (
-            <div className=" hidden "></div>
-          ) : (
-            <ul className=" md:hidden space-y-[40px] items-center text-center flex-col absolute bg-[#0f0f0fd2] backdrop-blur-lg w-screen h-screen top-0 left-0 pt-[100px] ">
-              <li className="flex  justify-center py-[14px] w-[80%] mx-auto rounded-[10px] ">My works</li>
-              <li className="flex justify-center py-[14px] w-[80%] mx-auto rounded-[10px] ">About me</li>
-              <li>
-                <div className="flex w-[80%] mx-auto border-solid fill-none p-[2px] bg-gradient-to-r from-[#F07175] to-[#6B58EF]  rounded-[6px] ">
-                  <button className="flex px-[15px] py-[14px] bg-[#0F0F0F] h-auto w-full justify-center rounded-[6px] ">
-                    Contact me
-                  </button>
-                </div>
-              </li>
-            </ul>
-          )}
+    <main className="flex relative flex-col items-center w-screen bg-[#0F0F0F] md:px-0 space-y-[80px]  ">
+    <div className="homepage flex flex-col gap-[92px] max-w-[1240px] w-[100%] px-[20px] ">
+      <div className="hero-section relative w-full mt-[45px] rounded-[15px] bg-opacity-10 bg-[url('../assets/bg-image.png')] bg-center bg-cover pt-[70px] pb-[70px] items-center flex flex-col ">
+        <div className="flex flex-wrap gap-[10px] text-[36px] md:text-[50px] font-bold tracking-wide md:max-w-[80%] max-w-[90%] justify-center space-y-[1px] mb-[5px] ">
+          <span>Hi</span>
+          <Image
+            className=" w-[28px] md:w-[50px] "
+            src={WaveIcon}
+            alt="wave icon"
+          />
+          ,<span> I&lsquo;m Adesipe Tomide, a</span>
+          <span className=" gradient-text ">Product Designer</span>
+        </div>
+        <p className=" text-[20px] text-center md:max-w-[567px] w-[80%] leading-[32px] tracking-wide mb-[34px] ">
+          I create innovative and user-centered solutions to solve design
+          challenges and enhance user experiences.
+        </p>
+        <div className="flex items-center justify-center gap-[10px] mb-[40px] ">
+          <Image className=" w-[40px] " src={FigmaIcon} alt="tools used icon" />
+          <Image className=" w-[50px] " src={PSIcon} alt="tools used icon" />
+        </div>
+        <button className=" bg-[#7046DB] rounded-[5px] py-[13px] px-[40px] ">
+          See my work
+        </button>
+      </div>
 
-          <button onClick={showMenu} className="md:hidden  ">
-            <Image
-              className=" w-[30px] "
-              src={hamburgerIcon}
-              alt="hamburger menu"
-            />
-          </button>
+      <div className="skills flex flex-col gap-[40px] overflow-hidden ">
+        <div className=" flex flex-col gap-[5px] items-center justify-center ">
+          <h1 className=" text-[30px] font-medium ">Skills</h1>
+          <Image src={curveUnderIcon} alt=" underline curve " />
         </div>
-      </nav>
-      <div className="homepage w-full flex flex-col gap-[92px] max-w-[1240px] px-[20px] ">
-        <div className="hero-section relative w-full mt-[45px] rounded-[15px] bg-opacity-10 bg-[url('../assets/bg-image.png')] bg-center bg-cover pt-[70px] pb-[70px] items-center flex flex-col ">
-          <div className="flex flex-wrap gap-[10px] text-[28px] md:text-[50px] font-bold tracking-wide max-w-[80%] justify-center space-y-[1px] mb-[5px] ">
-            <span>Hi</span>
-            <Image
-              className=" w-[28px] md:w-[50px] "
-              src={WaveIcon}
-              alt="wave icon"
-            />
-            <span>, I’m Adesipe Tomide, a</span>
-            <span className=" text-[#FF4C72] ">Product Designer</span>
-          </div>
-          <p className=" text-[20px] text-center md:max-w-[567px] leading-[32px] tracking-wide mb-[34px] ">
-            I create innovative and user-centered solutions to solve design
-            challenges and enhance user experiences.
-          </p>
-          <div className="flex items-center justify-center gap-[10px] mb-[40px] ">
-            <Image
-              className=" w-[40px] "
-              src={FigmaIcon}
-              alt="tools used icon"
-            />
-            <Image className=" w-[50px] " src={PSIcon} alt="tools used icon" />
-          </div>
-          <button className=" bg-[#7046DB] rounded-[5px] py-[13px] px-[40px] ">
-            See my work
-          </button>
+        <div className=" md:flex gap-[20px] items-center justify-center text-[24px] text-nowrap hidden ">
+          <p className=" w-fit ">User-Centered</p>
+          <Image src={StarCircleIcon} alt=" star circle curve " />
+          <p className=" w-fit  ">Problem-Solving</p>
+          <Image src={StarCircleIcon} alt=" star circle curve " />
+          <p className=" w-fit ">Cross-Functional</p>
+          <Image src={StarCircleIcon} alt=" mcircle curve " />
+          <p className=" w-fit ">Prototyping</p>
+          <Image src={StarCircleIcon} alt=" star circle curve " />
+          <p className=" w-fit ">Design</p>
         </div>
-
-        <div className="skills flex flex-col gap-[40px] overflow-hidden ">
-          <div className=" flex flex-col gap-[5px] items-center justify-center ">
-            <h1 className=" text-[30px] font-medium ">Skills</h1>
-            <Image src={curveUnderIcon} alt=" underline curve " />
-          </div>
-          <div className=" md:flex gap-[20px] items-center justify-center text-[24px] text-nowrap hidden ">
-            <p className=" w-fit ">User-Centered</p>
-            <Image src={StarCircleIcon} alt=" star circle curve " />
-            <p className=" w-fit  ">Problem-Solving</p>
-            <Image src={StarCircleIcon} alt=" star circle curve " />
-            <p className=" w-fit ">Cross-Functional</p>
-            <Image src={StarCircleIcon} alt=" mcircle curve " />
-            <p className=" w-fit ">Prototyping</p>
-            <Image src={StarCircleIcon} alt=" star circle curve " />
-            <p className=" w-fit ">Design</p>
-          </div>
-          <div className=" flex gap-[20px] items-center justify-center text-[24px] text-nowrap md:hidden slide-show ">
-            <p className=" w-fit ">User-Centered</p>
-            <Image src={StarCircleIcon} alt=" star circle curve " />
-            <p className=" w-fit  ">Problem-Solving</p>
-            <Image src={StarCircleIcon} alt=" star circle curve " />
-            <p className=" w-fit ">Cross-Functional</p>
-            <Image src={StarCircleIcon} alt=" mcircle curve " />
-            <p className=" w-fit ">Prototyping</p>
-            <Image src={StarCircleIcon} alt=" star circle curve " />
-            <p className=" w-fit ">Design</p>
-          </div>
-        </div>
-        <div className="what-i-do flex flex-col gap-[60px] items-center justify-center ">
-          <div className=" flex flex-col gap-[5px] items-center justify-center ">
-            <h1 className=" text-[30px] font-medium ">What I Do</h1>
-            <Image src={curveUnderIcon} alt=" underline curve " />
-          </div>
-          <div className="flex flex-wrap md:gap-[27px] gap-[20px] items-center justify-center ">
-            <WhatDoCard
-              title="Concept Development"
-              description="Generate creative ideas and concepts for new products or enhancements to existing ones."
-            />
-            <WhatDoCard
-              title="Solve problems"
-              description="I contribute to crafting products that are tailored to tackle challenges and fulfill distinct requirements for both individuals and businesses through design."
-            />
-            <WhatDoCard
-              title="Prototyping"
-              description="Create prototypes or mockups to visualize and test design concepts before moving to production."
-            />
-            <WhatDoCard
-              title="User Research"
-              description="Conduct research to understand user needs, preferences, and pain points, often involving surveys, interviews, and observation"
-            />
-            <WhatDoCard
-              title="Iterative Design"
-              description="Continuously refine designs based on feedback and testing, ensuring the final product meets user expectations."
-            />
-            <WhatDoCard
-              title="UI/UX Design"
-              description="Design the product's interface and user interactions to ensure a seamless and user-friendly experience."
-            />
-            <WhatDoCard
-              title="Collaboration"
-              description="Work closely with cross-functional teams, including engineers, marketers, and project managers, to bring the product from concept to reality."
-            />
-            <WhatDoCard
-              title="Design Validation"
-              description="Conduct usability testing and gather user feedback to validate and improve the design."
-            />
-          </div>
-        </div>
-
-        <div className="my-works flex flex-col gap-[80px] justify-center items-center ">
-          <div className=" flex flex-row md:text-[30px] text-[20px] px-[30px] py-[15px] font-semibold gap-[40px] mt-[20px] bg-[#141414] rounded-[10px] w-fit flex-auto items-center justify-center ">
-            <button
-              onClick={caseSelection}
-              className={
-                selectionState !== false
-                  ? " bg-[#1F1F1F] px-[20px] py-[5px] rounded-[10px] "
-                  : " bg-[#141414] "
-              }
-            >
-              Case Studies
-            </button>
-
-            <button
-              onClick={designSelection}
-              className={
-                selectionState !== true
-                  ? " bg-[#1F1F1F] px-[20px] py-[5px] rounded-[10px] "
-                  : " bg-[#141414] "
-              }
-            >
-              Design shots
-            </button>
-          </div>
-          {selectionState !== false ? (
-            <div className=" md:container mx-auto flex md:flex-row md:flex-wrap flex-col w-full md:gap-[80px] gap-[100px] justify-center space-y-[100x] ">
-              {caseStudies.map((content, index) => (
-                <CaseStudy
-                  key={index}
-                  image={content.image}
-                  title={content.title}
-                  description={content.description}
-                  link={content.link}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className=" md:container mx-auto flex flex-wrap flex-row w-full md:gap-[20px] lg:gap-[30px] gap-[40px] justify-center space-y-[100x] ">
-              {designShots.map((content, index) => (
-                <DesignShot
-                  key={index}
-                  image={content.image}
-                  title={content.title}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-        <div className="contact-me flex flex-col gap-[80px] ">
-          <div className=" flex flex-col gap-[5px] items-center justify-center ">
-            <h1 className=" text-[30px] font-medium ">Contact me</h1>
-            <Image src={curveUnderIcon} alt=" underline curve " />
-          </div>
-          <div className="flex gap-[128px] justify-center items-center ">
-            <form
-              id="contact-form"
-              action="submit"
-              // method="post"
-              ref={null}
-              onSubmit={handleSubmit}
-              autoComplete="name"
-              className="flex flex-col gap-[20px] md:p-0 p-[20px] w-[550px] rounded-[10px] md:text-[#EDF5FF] text-[#151C23] "
-            >
-              <div className="flex relative flex-col gap-[10px] ">
-                <label
-                  className=" absolute left-[10px] top-[5px] "
-                  id="email"
-                  htmlFor=""
-                >
-                  <Image
-                    className=" m-[6px] "
-                    src={personIcon}
-                    alt="person icon"
-                  />
-                </label>
-                <input
-                  name="user_name"
-                  id="name"
-                  type="text"
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  autoComplete="name"
-                  className="  w-full h-[60px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
-                />
-              </div>
-              <div className="flex relative flex-col gap-[10px] ">
-                <label
-                  className=" absolute left-[10px] top-[5px] "
-                  id="email"
-                  htmlFor=""
-                >
-                  <Image src={messageIcon} alt="message icon" />
-                </label>
-                <input
-                  name="user_email"
-                  id="email"
-                  type="text"
-                  onChange={handleChange}
-                  placeholder="Your email address"
-                  autoComplete="email"
-                  className=" w-full h-[60px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
-                />
-              </div>
-
-              <div className="flex relative flex-col gap-[10px] ">
-                <textarea
-                  name="message"
-                  id="message"
-                  onChange={handleChange}
-                  cols={40}
-                  rows={20}
-                  placeholder="Your message here"
-                  className=" w-full h-[250px] text-[18px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[10px] bg-[#93b9ff00]  "
-                ></textarea>
-              </div>
-              <input
-                type="submit"
-                typeof="submit"
-                value="Send me a message"
-                onSubmit={handleSubmit}
-                className=" cursor-pointer bg-[#7046DB] text-[20px] text-[#ffffff] py-[14px] px-[20px] w-fit md:mx-0 mx-auto rounded-[5px] "
-              />
-            </form>
-            <Image
-              className=" hidden md:flex "
-              src={contactImage}
-              alt="contact person avatar"
-            />
-          </div>
-        </div>
-        <div className="socials flex flex-col gap-[60px] ">
-          <div className=" flex flex-col gap-[5px] items-center justify-center ">
-            <h1 className=" text-[30px] font-medium ">Socials</h1>
-            <Image src={curveUnderIcon} alt=" underline curve " />
-          </div>
-          <div className=" flex flex-wrap gap-[40px] md:text-[30px] text-[20px] justify-center ">
-            <div className=" flex gap-[15px] items-center justify-center ">
-              <Image
-                className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center "
-                src={LinkedIcon}
-                alt=" linkedIn social media icon "
-              />
-              <a
-                className=" underline "
-                href="https://www.linkedin.com/in/adesipe-tomide/"
-              >
-                John Tomide
-              </a>
-            </div>
-            <div className=" flex gap-[15px] items-center justify-center ">
-              <Image
-                className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center "
-                src={WAIcon}
-                alt="whatsapp social media icon"
-              />
-              <a className=" underline " href="https://wa.link/dbk5bf">
-                +2348133905285
-              </a>
-            </div>
-            <div className=" flex gap-[15px] items-center justify-center ">
-              <Image
-                className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center "
-                src={BehanceIcon}
-                alt=" behance social media icon"
-              />
-              <a className=" underline " href="https://wa.link/dbk5bf">
-                John Tomide
-              </a>
-            </div>
-          </div>
+        <div className=" flex gap-[20px] items-center justify-center text-[24px] text-nowrap md:hidden slide-show ">
+          <p className=" w-fit ">User-Centered</p>
+          <Image src={StarCircleIcon} alt=" star circle curve " />
+          <p className=" w-fit  ">Problem-Solving</p>
+          <Image src={StarCircleIcon} alt=" star circle curve " />
+          <p className=" w-fit ">Cross-Functional</p>
+          <Image src={StarCircleIcon} alt=" mcircle curve " />
+          <p className=" w-fit ">Prototyping</p>
+          <Image src={StarCircleIcon} alt=" star circle curve " />
+          <p className=" w-fit ">Design</p>
         </div>
       </div>
 
-      <footer className=" bg-[#FFFFFF1A] flex justify-center items-center py-[16px] w-full text-[20px] ">
-        Adesipe Tomide © 2024
-      </footer>
+      <div className="what-i-do flex flex-col gap-[60px] items-center justify-center ">
+        <div className=" flex flex-col gap-[5px] items-center justify-center ">
+          <h1 className=" text-[30px] font-medium ">What I Do</h1>
+          <Image src={curveUnderIcon} alt=" underline curve " />
+        </div>
+        <div className="flex flex-wrap md:gap-[27px] gap-[20px] items-center justify-center ">
+          <WhatDoCard
+            title="Concept Development"
+            description="Generate creative ideas and concepts for new products or enhancements to existing ones."
+          />
+          <WhatDoCard
+            title="Solve problems"
+            description="I contribute to crafting products that are tailored to tackle challenges and fulfill distinct requirements for both individuals and businesses through design."
+          />
+          <WhatDoCard
+            title="Prototyping"
+            description="Create prototypes or mockups to visualize and test design concepts before moving to production."
+          />
+          <WhatDoCard
+            title="User Research"
+            description="Conduct research to understand user needs, preferences, and pain points, often involving surveys, interviews, and observation"
+          />
+          <WhatDoCard
+            title="Iterative Design"
+            description="Continuously refine designs based on feedback and testing, ensuring the final product meets user expectations."
+          />
+          <WhatDoCard
+            title="UI/UX Design"
+            description="Design the product's interface and user interactions to ensure a seamless and user-friendly experience."
+          />
+          <WhatDoCard
+            title="Collaboration"
+            description="Work closely with cross-functional teams, including engineers, marketers, and project managers, to bring the product from concept to reality."
+          />
+          <WhatDoCard
+            title="Design Validation"
+            description="Conduct usability testing and gather user feedback to validate and improve the design."
+          />
+        </div>
+      </div>
+
+      <div
+        id="portfolio"
+        className="my-works flex flex-col gap-[80px] justify-center items-center "
+      >
+        <div className=" flex flex-row md:text-[30px] text-[20px] px-[30px] py-[15px] font-semibold gap-[40px] mt-[20px] bg-[#141414] rounded-[10px] w-fit flex-auto items-center justify-center ">
+          <button
+            onClick={caseSelection}
+            className={
+              selectionState !== false
+                ? " bg-[#1F1F1F] px-[20px] py-[5px] rounded-[10px] "
+                : " bg-[#141414] "
+            }
+          >
+            Case Studies
+          </button>
+
+          <button
+            onClick={designSelection}
+            className={
+              selectionState !== true
+                ? " bg-[#1F1F1F] px-[20px] py-[5px] rounded-[10px] "
+                : " bg-[#141414] "
+            }
+          >
+            Design shots
+          </button>
+        </div>
+        {selectionState !== false ? (
+          <div className=" md:container mx-auto flex md:flex-col md:flex-wrap flex-col w-full md:gap-[80px] gap-[100px] justify-center space-y-[100x] ">
+            {caseStudies.map((content, index) => (
+              <CaseStudy
+                key={index}
+                image={content.image}
+                title={content.title}
+                description={content.description}
+                link={content.link}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className=" md:container mx-auto flex flex-wrap flex-row w-full md:gap-[20px] lg:gap-[30px] gap-[40px] justify-center space-y-[100x] ">
+            {designShots.map((content, index) => (
+              <DesignShot
+                key={index}
+                image={content.image}
+                title={content.title}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="contact-me flex flex-col gap-[80px] ">
+        <div className=" flex flex-col gap-[5px] items-center justify-center ">
+          <h1 className=" text-[30px] font-medium ">Contact me</h1>
+          <Image src={curveUnderIcon} alt=" underline curve " />
+        </div>
+        <div className="flex gap-[128px] justify-center items-center ">
+          <form
+            id="contact-form"
+            action="submit"
+            // method="post"
+            ref={null}
+            onSubmit={handleSubmit}
+            autoComplete="name"
+            className="flex flex-col gap-[20px] md:p-0 p-[20px] w-[550px] rounded-[10px] md:text-[#EDF5FF] text-[#151C23] "
+          >
+            <div className="flex relative flex-col gap-[10px] ">
+              <label
+                className=" absolute left-[10px] top-[5px] "
+                id="email"
+                htmlFor=""
+              >
+                <Image
+                  className=" m-[6px] "
+                  src={personIcon}
+                  alt="person icon"
+                />
+              </label>
+              <input
+                name="user_name"
+                id="name"
+                type="text"
+                onChange={handleChange}
+                placeholder="Your name"
+                autoComplete="name"
+                className="  w-full h-[60px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
+              />
+            </div>
+            <div className="flex relative flex-col gap-[10px] ">
+              <label
+                className=" absolute left-[10px] top-[5px] "
+                id="email"
+                htmlFor=""
+              >
+                <Image src={messageIcon} alt="message icon" />
+              </label>
+              <input
+                name="user_email"
+                id="email"
+                type="text"
+                onChange={handleChange}
+                placeholder="Your email address"
+                autoComplete="email"
+                className=" w-full h-[60px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
+              />
+            </div>
+
+            <div className="flex relative flex-col gap-[10px] ">
+              <textarea
+                name="message"
+                id="message"
+                onChange={handleChange}
+                cols={40}
+                rows={20}
+                placeholder="Your message here"
+                className=" w-full h-[250px] text-[18px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[10px] bg-[#93b9ff00]  "
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              typeof="submit"
+              value="Send me a message"
+              onSubmit={handleSubmit}
+              className=" cursor-pointer bg-[#7046DB] text-[20px] text-[#ffffff] py-[14px] px-[20px] w-fit md:mx-0 mx-auto rounded-[5px] "
+            />
+          </form>
+          <Image
+            className=" hidden md:flex "
+            src={contactImage}
+            alt="contact person avatar"
+          />
+        </div>
+      </div>
+
+      <div className="socials flex flex-col gap-[60px] ">
+        <div className=" flex flex-col gap-[5px] items-center justify-center ">
+          <h1 className=" text-[30px] font-medium ">Socials</h1>
+          <Image src={curveUnderIcon} alt=" underline curve " />
+        </div>
+        <div className=" flex flex-wrap gap-[40px] md:text-[30px] text-[20px] justify-center ">
+          <div className=" flex gap-[15px] items-center justify-center ">
+            <Image
+              className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center "
+              src={LinkedIcon}
+              alt=" linkedIn social media icon "
+            />
+            <a
+              className=" underline "
+              href="https://www.linkedin.com/in/adesipe-tomide/"
+            >
+              John Tomide
+            </a>
+          </div>
+          <div className=" flex gap-[15px] items-center justify-center ">
+            <Image
+              className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center "
+              src={WAIcon}
+              alt="whatsapp social media icon"
+            />
+            <a className=" underline " href="https://wa.link/dbk5bf">
+              +2348133905285
+            </a>
+          </div>
+          <div className=" flex gap-[15px] items-center justify-center ">
+            <Image
+              className=" p-[10px] w-[50px] rounded-[5px] bg-[#474747] flex self-center "
+              src={BehanceIcon}
+              alt=" behance social media icon"
+            />
+            <a className=" underline " href="https://wa.link/dbk5bf">
+              John Tomide
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+      
+    </main>
   );
 }
+
 
 const WhatDoCard = (props: any) => {
   return (
@@ -512,15 +465,15 @@ const WhatDoCard = (props: any) => {
 
 const CaseStudy = (props: any) => {
   return (
-    <div className=" flex md:gap-[35px] gap-[20px] flex-wrap md:text-left text-center ">
+    <div className=" flex md:gap-[35px] gap-[20px] md:max-w-[100%] max-w-[380px] mx-auto flex-row md:flex-nowrap flex-wrap md:text-left text-center ">
       <Image
-        className=" max-w-[550px] h-auto object-fill "
+        className=" md:max-w-[550px] md:mx-0 h-auto object-fill "
         src={props.image}
         alt=" case study image "
       />
       <div className=" flex flex-col md:gap-[22px] gap-[16px] max-w-[500px] items-left ">
         <h1 className=" text-[30px] font-medium ">{props.title}</h1>
-        <p className=" md:text-[20px] text-[14px] leading-[30px]  ">
+        <p className=" md:text-[20px] text-[14px] w-[80%] md:mx-0 mx-auto leading-[30px]  ">
           {props.description}
         </p>
         <a
@@ -535,12 +488,8 @@ const CaseStudy = (props: any) => {
 };
 const DesignShot = (props: any) => {
   return (
-    <div className=" flex flex-col object-contain w-[530px] flex-auto bg-[#1F1F1F] rounded-[4px] overflow-hidden ">
-      <Image
-        className=" w-auto h-[90%] "
-        src={props.image}
-        alt=" case study image "
-      />
+    <div className=" flex flex-col object-contain md:w-[530px] max-w-[380px] flex-auto bg-[#1F1F1F] rounded-[4px] overflow-hidden ">
+      <Image className=" h-[90%] " src={props.image} alt=" case study image " />
       <p className=" text-[20px] py-[10px] text-center md:h-auto h-[50px] ">
         {props.title}
       </p>
