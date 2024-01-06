@@ -18,10 +18,20 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #0F0F0F
+  background: #0f0f0f;
 }
 
 * {
   list-style: none;
   border-style: none;
+}
+
+.slide-show {
+  animation: moveSlideshow 12s linear infinite;
+}
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-66.6666%);  
+  }
 }
