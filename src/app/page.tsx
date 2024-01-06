@@ -174,7 +174,7 @@ export default function Home() {
     <main className="flex relative flex-col items-center w-screen bg-[#0F0F0F] md:px-0 space-y-[80px]  ">
     <div className="homepage flex flex-col gap-[92px] max-w-[1240px] w-[100%] px-[20px] ">
       <div className="hero-section relative w-full mt-[45px] rounded-[15px] bg-opacity-10 bg-[url('../assets/bg-image.png')] bg-center bg-cover pt-[70px] pb-[70px] items-center flex flex-col ">
-        <div className="flex flex-wrap gap-[10px] text-[36px] md:text-[50px] font-bold tracking-wide md:max-w-[80%] max-w-[90%] justify-center space-y-[1px] mb-[5px] ">
+        <div className="flex flex-wrap gap-[10px] text-[36px] md:text-[50px] font-bold tracking-wide md:max-w-[80%] max-w-[95%] text-center justify-center space-y-[1px] mb-[5px] ">
           <span>Hi</span>
           <Image
             className=" w-[28px] md:w-[50px] "
@@ -452,7 +452,7 @@ export default function Home() {
 
 const WhatDoCard = (props: any) => {
   return (
-    <div className=" flex flex-col w-[160px] md:p-[24px] p-[16px] gap-[8px] border-solid border-[2px] border-[#FFFFFF1A] md:w-[270px]  md:min-h-[280px] h-[260px] flex-auto hover:bg-[#ffffff2f] bg-[#131313] rounded-[10px] ">
+    <div className=" flex flex-col w-[160px] md:p-[24px] p-[16px] gap-[8px] border-solid border-[2px] border-[#FFFFFF1A] md:w-[270px]  md:min-h-[280px] h-[290px] flex-auto hover:bg-[#ffffff2f] bg-[#131313] rounded-[10px] ">
       <h1 className=" md:text-[20px] text-[18px] font-semibold w-full ">
         {props.title}
       </h1>

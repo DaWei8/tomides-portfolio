@@ -53,7 +53,7 @@ export default function AboutPage() {
             journey, I&lsquo;ve contributed to the design of products that meet
             industry standards. Outside of my creative endeavors, you&lsquo;ll
             often find me playing video games, enjoying a movie, or in web3,
-            getting myself some NFTS and cryptocurrencies I&lsquo;m currently
+            getting myself some NFTS and cryptocurrencies. I&lsquo;m currently
             located in Ondo, Nigeria, but I&lsquo;m open to relocating for the
             right opportunity. I&lsquo;d be thrilled to learn more about your
             project and how I can be a part of it.
@@ -133,7 +133,7 @@ export default function AboutPage() {
       </div>
       <div className="socials flex flex-col md:gap-[60px] gap-[30px] text-[14px]  ">
         <div className=" flex flex-col gap-[5px] items-center justify-center ">
-          <h1 className=" text-[30px] font-medium ">Request my Resume</h1>
+          <h1 className=" text-[30px] font-medium ">My Resume</h1>
           <Image src={curveUnderIcon} alt=" underline curve " />
         </div>
         <div className="flex gap-[128px] justify-center items-center ">

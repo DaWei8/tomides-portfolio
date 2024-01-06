@@ -46,7 +46,7 @@ export default function NavBar() {
         {hamburgerState !== true ? (
           <div className=" hidden "></div>
         ) : (
-          <ul className=" md:hidden text-[24px] space-y-[40px] items-center text-center flex-col absolute bg-[#0f0f0f] backdrop-blur-lg w-screen h-screen top-0 left-0 pt-[100px]  ">
+          <ul className=" md:hidden text-[24px] space-y-[40px] text-[] items-center text-center flex-col absolute bg-[#0f0f0f] backdrop-blur-lg w-screen h-screen top-0 left-0 pt-[100px]  ">
             <Image className=" absolute w-[40px] top-[60px] right-[40px] " src={cancelIcon} alt="cancel button icon" onClick={closeMenu} />
             <li className="flex  justify-center py-[14px] w-[80%] mx-auto rounded-[10px] ">
               <a onClick={closeMenu} href="../">
