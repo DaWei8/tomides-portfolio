@@ -197,12 +197,12 @@ export default function Home() {
           {hamburgerState !== true ? (
             <div className=" hidden "></div>
           ) : (
-            <ul className=" md:hidden gap-[40px] items-center flex-row hidden  ">
-              <li className="flex">My works</li>
-              <li className="flex">About me</li>
+            <ul className=" md:hidden space-y-[40px] items-center text-center flex-col absolute bg-[#0f0f0fd2] backdrop-blur-lg w-screen h-screen top-0 left-0 pt-[100px] ">
+              <li className="flex  justify-center py-[14px] w-[80%] mx-auto rounded-[10px] ">My works</li>
+              <li className="flex justify-center py-[14px] w-[80%] mx-auto rounded-[10px] ">About me</li>
               <li>
-                <div className="flex border-solid fill-none p-[2px] bg-gradient-to-r from-[#F07175] to-[#6B58EF]  rounded-[6px] ">
-                  <button className="flex px-[15px] py-[8px] bg-[#0F0F0F] rounded-[6px] ">
+                <div className="flex w-[80%] mx-auto border-solid fill-none p-[2px] bg-gradient-to-r from-[#F07175] to-[#6B58EF]  rounded-[6px] ">
+                  <button className="flex px-[15px] py-[14px] bg-[#0F0F0F] h-auto w-full justify-center rounded-[6px] ">
                     Contact me
                   </button>
                 </div>
