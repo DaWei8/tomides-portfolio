@@ -193,7 +193,7 @@ export default function Home() {
           <Image className=" w-[50px] " src={PSIcon} alt="tools used icon" />
         </div>
         <button className=" bg-[#7046DB] rounded-[5px] py-[13px] px-[40px] ">
-          See my work
+          <a href="#portfolio">See my work</a>
         </button>
       </div>
 
