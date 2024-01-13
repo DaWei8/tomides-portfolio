@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <NavBar />
-        <div className=" my-[120px] " >{children}</div>
+        <div className=" mt-[120px]  md:mt-[200px] mb-[120px] " >{children}</div>
         <footer className=" bg-[#FFFFFF1A] flex justify-center items-center py-[16px] w-full text-[20px] ">
         Adesipe Tomide © 2024
       </footer>

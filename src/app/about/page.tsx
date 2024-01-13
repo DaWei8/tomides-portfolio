@@ -47,7 +47,7 @@ export default function AboutPage() {
             Adesipe Tomide, is a{" "}
             <span className=" gradient-text ">Product Designer</span>
           </h1>
-          <p className=" leading-[32px] md:text-[16px] text-[14px] md:text-left text-center  md:w-[90%] w-[80%] ">
+          <p className=" leading-[32px] md:text-[16px] text-[14px] md:text-left text-center mb-[20px] md:w-[90%] w-[80%] ">
             I have a passion for crafting and streamlining digital experiences
             that resonate with everyday users. Over my three-year professional
             journey, I&lsquo;ve contributed to the design of products that meet
@@ -58,6 +58,7 @@ export default function AboutPage() {
             right opportunity. I&lsquo;d be thrilled to learn more about your
             project and how I can be a part of it.
           </p>
+          <a className=" h-[60px] px-[60px] bg-[#7046DB] text-[#fff]  rounded-[10px] flex justify-center items-center " href="/public/resume.pdf"><p>View Resume</p></a>
         </div>
         <Image
           className=" md:w-[35%] rounded-[10px] "
@@ -137,59 +138,13 @@ export default function AboutPage() {
           <Image src={curveUnderIcon} alt=" underline curve " />
         </div>
         <div className="flex gap-[128px] justify-center items-center ">
-          <form
-            id="contact-form"
-            action="submit"
-            // method="post"
-            ref={null}
-            onSubmit={handleSubmit}
-            autoComplete="name"
-            className="flex flex-col gap-[20px] md:p-0 p-[20px] text-[18px] w-[550px] rounded-[10px] md:text-[#EDF5FF] text-[#151C23] "
-          >
-            <div className="flex relative flex-col gap-[10px] ">
-              <label
-                className=" absolute left-[10px] top-[10px] "
-                id="email"
-                htmlFor=""
-              >
-                <Image src={messageIcon} alt="message icon" />
-              </label>
-              <input
-                name="user_email"
-                id="email"
-                type="text"
-                onChange={handleChange}
-                placeholder="Your email address"
-                autoComplete="email"
-                className=" w-full h-[60px] border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] p-[5px] pl-[60px] bg-[#93b9ff00]  "
-              />
-            </div>
-
-            <div className="flex relative flex-col gap-[10px] ">
-              <textarea
-                name="message"
-                id="message"
-                onChange={handleChange}
-                cols={40}
-                rows={20}
-                placeholder="Any additional information here"
-                className=" w-full h-[60px]  border-solid border-[1px] md:border-[#EDF5FF] border-[#71A1FF50] rounded-[5px] mb-[20px] p-[5px] pl-[10px] bg-[#93b9ff00]  "
-              ></textarea>
-            </div>
-            <input
-              type="submit"
-              typeof="submit"
-              value="Request my resume"
-              onSubmit={handleSubmit}
-              className=" cursor-pointer bg-[#7046DB] text-[20px] text-[#ffffff] py-[14px] px-[20px] w-fit md:mx-0 mx-auto rounded-[5px] "
-            />
-          </form>
           <Image
             className=" hidden md:flex "
             src={resumeImage}
             alt="contact person avatar"
           />
         </div>
+        <a className=" h-[60px] px-[60px] bg-[#7046DB] text-[#fff]  rounded-[10px] mx-auto flex justify-center items-center " href="/public/resume.pdf"><p>View Resume</p></a>
       </div>
     </main>
   );
