@@ -271,7 +271,7 @@ export default function Home() {
         id="portfolio"
         className="my-works flex flex-col gap-[80px] justify-center items-center "
       >
-        <div className=" flex flex-row md:text-[30px] text-[1px] px-[30px] py-[15px] font-semibold gap-[40px] mt-[20px] bg-[#141414] rounded-[10px] w-fit flex-auto items-center justify-center ">
+        <div className=" flex flex-row md:text-[30px] text-[18px] px-[30px] py-[15px] font-semibold gap-[40px] mt-[20px] bg-[#141414] rounded-[10px] w-fit flex-auto items-center justify-center ">
           <button
             onClick={caseSelection}
             className={
@@ -307,7 +307,7 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className=" container mx-auto flex flex-wrap flex-col w-full md:gap-[20px] lg:gap-[30px] gap-[40px] items-center justify-center space-y-[100x] h-[1500px]  ">
+          <div className=" container mx-auto flex flex-wrap md:flex-col flex-row w-full md:gap-[20px] lg:gap-[30px] gap-[40px] items-center justify-center space-y-[100x] h-[1500px]  ">
             {designShots.map((content, index) => (
               <DesignShot
                 key={index}
