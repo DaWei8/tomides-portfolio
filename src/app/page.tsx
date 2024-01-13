@@ -271,7 +271,7 @@ export default function Home() {
         id="portfolio"
         className="my-works flex flex-col gap-[80px] justify-center items-center "
       >
-        <div className=" flex flex-row md:text-[30px] text-[20px] px-[30px] py-[15px] font-semibold gap-[40px] mt-[20px] bg-[#141414] rounded-[10px] w-fit flex-auto items-center justify-center ">
+        <div className=" flex flex-row md:text-[30px] text-[1px] px-[30px] py-[15px] font-semibold gap-[40px] mt-[20px] bg-[#141414] rounded-[10px] w-fit flex-auto items-center justify-center ">
           <button
             onClick={caseSelection}
             className={
@@ -307,7 +307,7 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className=" md:container mx-auto flex flex-wrap flex-row w-full md:gap-[20px] lg:gap-[30px] gap-[40px] justify-center space-y-[100x] ">
+          <div className=" container mx-auto flex flex-wrap flex-col w-full md:gap-[20px] lg:gap-[30px] gap-[40px] items-center justify-center space-y-[100x] h-[1500px]  ">
             {designShots.map((content, index) => (
               <DesignShot
                 key={index}
@@ -490,7 +490,7 @@ const DesignShot = (props: any) => {
   return (
     <div className=" flex flex-col object-contain md:w-[530px] max-w-[380px] flex-auto bg-[#1F1F1F] rounded-[4px] overflow-hidden ">
       <Image className=" h-[90%] " src={props.image} alt=" case study image " />
-      <p className=" text-[20px] py-[10px] text-center md:h-auto h-[50px] ">
+      <p className=" text-[16px] py-[10px] text-center md:h-auto h-[50px] ">
         {props.title}
       </p>
       {/* <p className=" text-[20px] py-[10px] text-center md:h-auto h-[50px] ">{props.title}</p> */}

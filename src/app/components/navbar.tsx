@@ -36,10 +36,13 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <div className="flex border-solid fill-none p-[2px] bg-gradient-to-r from-[#F07175] to-[#6B58EF]  rounded-[6px] ">
-              <button className="flex px-[15px] py-[8px] bg-[#0F0F0F] rounded-[6px] ">
-                Contact me
-              </button>
+            <div className="flex border-solid fill-none p-[2px] bg-gradient-to-r from-[#F07175] to-[#6B58EF]  rounded-[10px] ">
+              <a
+                className=" h-[60px] px-[40px] bg-[#0f0f0f] text-[#fff]  rounded-[10px] mx-auto flex justify-center items-center "
+                href="/resume.pdf"
+              >
+                <p>View Resume</p>
+              </a>
             </div>
           </li>
         </ul>
