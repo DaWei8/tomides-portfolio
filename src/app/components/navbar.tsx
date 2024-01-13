@@ -47,7 +47,12 @@ export default function NavBar() {
           <div className=" hidden "></div>
         ) : (
           <ul className=" md:hidden text-[24px] space-y-[40px] text-[] items-center text-center flex-col absolute bg-[#0f0f0f] backdrop-blur-lg w-screen h-screen top-0 left-0 pt-[100px]  ">
-            <Image className=" absolute w-[40px] top-[60px] right-[40px] " src={cancelIcon} alt="cancel button icon" onClick={closeMenu} />
+            <Image
+              className=" absolute w-[40px] top-[60px] right-[40px] "
+              src={cancelIcon}
+              alt="cancel button icon"
+              onClick={closeMenu}
+            />
             <li className="flex  justify-center py-[14px] w-[80%] mx-auto rounded-[10px] ">
               <a onClick={closeMenu} href="../">
                 Home
@@ -65,9 +70,12 @@ export default function NavBar() {
             </li>
             <li>
               <div className="flex w-fit mx-auto border-solid fill-none p-[2px] bg-gradient-to-r from-[#F07175] to-[#6B58EF]  rounded-[6px] ">
-                <button className="flex px-[18px] py-[14px] bg-[#0F0F0F] h-auto w-full justify-center rounded-[6px] ">
-                  Contact me
-                </button>
+                <a
+                  className=" h-[60px] px-[60px] bg-[#7046DB] text-[#fff]  rounded-[10px] mx-auto flex justify-center items-center "
+                  href="/resume.pdf"
+                >
+                  <p>View Resume</p>
+                </a>
               </div>
             </li>
           </ul>

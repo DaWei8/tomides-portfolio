@@ -11,6 +11,8 @@ import resumeImage from "../../assets/cand-res-brief.png";
 import Image from "next/image";
 import { useState } from "react";
 
+import dynamic from 'next/dynamic';
+
 export default function AboutPage() {
   const [formData, setFormData] = useState({
     user_name: "",
@@ -58,7 +60,7 @@ export default function AboutPage() {
             right opportunity. I&lsquo;d be thrilled to learn more about your
             project and how I can be a part of it.
           </p>
-          <a className=" h-[60px] px-[60px] bg-[#7046DB] text-[#fff]  rounded-[10px] flex justify-center items-center " href="/public/resume.pdf"><p>View Resume</p></a>
+          <a className=" h-[60px] px-[60px] bg-[#7046DB] text-[#fff]  rounded-[10px] flex justify-center items-center " href="/resume.pdf" ><p>View Resume</p></a>
         </div>
         <Image
           className=" md:w-[35%] rounded-[10px] "
@@ -144,7 +146,8 @@ export default function AboutPage() {
             alt="contact person avatar"
           />
         </div>
-        <a className=" h-[60px] px-[60px] bg-[#7046DB] text-[#fff]  rounded-[10px] mx-auto flex justify-center items-center " href="/public/resume.pdf"><p>View Resume</p></a>
+        <a className=" h-[60px] px-[60px] bg-[#7046DB] text-[#fff]  rounded-[10px] mx-auto flex justify-center items-center " href="/resume.pdf"><p>View Resume</p></a>
+        {/* <FileViewer filePath="/resume.pdf" /> */}
       </div>
     </main>
   );
